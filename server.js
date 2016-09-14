@@ -26,7 +26,7 @@ app.post('/request', function(req, res) {
     return;
   }
 
-  var requestJob = agenda.create('request url', {
+  var requestJob = agenda.create('request-url', {
     'something': Math.random(),
     'url': query.url
   })
@@ -36,7 +36,8 @@ app.post('/request', function(req, res) {
   })
 
   requestJob.save();
-  res.end()
+
+  res.send('done adding ' + query.url)
 })
 
 app.listen(3000)
