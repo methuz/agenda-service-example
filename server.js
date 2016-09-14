@@ -35,6 +35,8 @@ app.post('/request', function(req, res) {
     'data.url': 1
   })
 
+  requestJob.repeatEvery('3 seconds');
+
   requestJob.save();
 
   res.send('done adding ' + query.url)
